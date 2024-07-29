@@ -155,11 +155,12 @@
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 (use-package dap-python)
 
-(use-package lsp-pyright
-  :ensure t
-  :hook (python-mode . (lambda ()
-                         (require 'lsp-pyright)
-                         (lsp))))  ; or lsp-deferred
+
+;; (use-package lsp-pyright
+;;   :ensure t
+;;   :hook (python-mode . (lambda ()
+;;                          (require 'lsp-pyright)
+;;                          (lsp))))  ; or lsp-deferred
 
 ;; M-x lsp-install-server RET jsts-ls RET.
 ;; npm i -g javascript-typescript-langserver
@@ -176,6 +177,11 @@
 ;;((setq org-roam-directory (file-truename "~/Notes"))
 ;; (setq find-file-visit-truename t)
 ;; (org-roam-db-autosync-mode))
+
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
 
 ;; Org babel setup
 (org-babel-do-load-languages
